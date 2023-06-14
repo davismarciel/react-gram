@@ -64,6 +64,7 @@ input[type="submit"] {
   cursor: pointer;
   opacity: .8;
   font-size: 1em;
+  margin-bottom: 0.5em;
 }
 
 input[type="submit"] {

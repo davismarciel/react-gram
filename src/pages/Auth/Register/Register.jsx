@@ -1,9 +1,14 @@
 import '../Auth.css';
 
+// Hooks
 import { Link } from 'react-router-dom';
-
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
+// Components
+import Message from '../../../components/Message/Message';
+
+// Slice
 import { register, reset } from '../../../slices/authSlice';
 
 const Register = () => {
@@ -64,11 +69,12 @@ const Register = () => {
           value={confirmPassword || ''}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button type="submit">Register</button>
+        {!loading && <button type="submit">Register</button>}
+        {loading && <button type="submit" disabled>Creating...</button>}
+        {error && <Message msg={error} type="error" />}
       </form>
       <p>
         Already have an account?
-        {' '}
         <Link to="/login">Sign in</Link>
       </p>
     </div>
