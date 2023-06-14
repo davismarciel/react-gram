@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import './App.css';
 
-// Router
 import {
   BrowserRouter, Routes, Route, Navigate,
 } from 'react-router-dom';
+
+// Hooks
+import { useAuth } from './hooks/useAuth';
+
+// Router
 
 // Components
 import NavBar from './components/NavBar/NavBar';
@@ -16,14 +20,21 @@ import Login from './pages/Auth/Login/Login';
 import Register from './pages/Auth/Register/Register';
 
 function App() {
+  const { auth, loading } = useAuth();
+
+  console.log(loading);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <BrowserRouter>
       <NavBar />
       <div className="container">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/" element={auth ? <Home /> : <Navigate to="/login" />} />
+          <Route path="/login" element={!auth ? <Login /> : <Navigate to="/" />} />
+          <Route path="/register" element={!auth ? <Register /> : <Navigate to="/" />} />
         </Routes>
       </div>
       <Footer />

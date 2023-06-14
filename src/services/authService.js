@@ -5,8 +5,7 @@ const register = async (data) => {
   const config = requestConfig('POST', data);
 
   try {
-    // eslint-disable-next-line prefer-template
-    const res = await fetch(url + '/users/register', config)
+    const res = await fetch(`${url}/users/register`, config)
       .then((res) => res.json())
       .catch((err) => err);
 
