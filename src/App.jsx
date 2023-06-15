@@ -1,14 +1,12 @@
-import { useState } from 'react';
 import './App.css';
 
+// Router
 import {
   BrowserRouter, Routes, Route, Navigate,
 } from 'react-router-dom';
 
 // Hooks
 import { useAuth } from './hooks/useAuth';
-
-// Router
 
 // Components
 import NavBar from './components/NavBar/NavBar';
@@ -21,8 +19,6 @@ import Register from './pages/Auth/Register/Register';
 
 function App() {
   const { auth, loading } = useAuth();
-
-  console.log(loading);
 
   if (loading) {
     return <p>Loading...</p>;

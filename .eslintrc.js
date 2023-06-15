@@ -26,5 +26,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-shadow': 'off',
     'consistent-return': 'off',
+    'no-underscore-dangle': 'off',
+    'react/no-unescaped-entities': 'off',
   },
 };
