@@ -4,9 +4,6 @@ import './EditProfile.css';
 import { useEffect, useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-// Icon edit
-import AvatarEditor from 'react-avatar-editor';
-
 // Slice
 import { profile, updateProfile, resetMessage } from '../../slices/userSlice';
 // Config
