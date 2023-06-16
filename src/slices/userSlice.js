@@ -10,18 +10,38 @@ const initialState = {
   message: null,
 };
 
-// Get user details to fill user form
-export const profile = createAsyncThunk('auth/profile', async (user, thunkApi) => {
-  const { token } = thunkApi.getState().auth.user;
-  const data = await userService.profile(user, token);
+// Get user details, for edit data
+export const profile = createAsyncThunk(
+  'user/profile',
+  async (user, thunkAPI) => {
+    const { token } = thunkAPI.getState().auth.user;
 
-  // Check for errors
-  if (data.errors) {
-    return thunkApi.rejectWithValue(data.errors[0]);
-  }
+    const data = await userService.profile(user, token);
 
-  return data;
-});
+    console.log(data);
+
+    return data;
+  },
+);
+
+// Update user details
+export const updateProfile = createAsyncThunk(
+  'user/update',
+  async (user, thunkAPI) => {
+    const { token } = thunkAPI.getState().auth.user;
+
+    const data = await userService.updateProfile(user, token);
+
+    // Check for errors
+    if (data.errors) {
+      return thunkAPI.rejectWithValue(data.errors[0]);
+    }
+
+    console.log(data);
+
+    return data;
+  },
+);
 
 export const userSlice = createSlice({
   name: 'user',
@@ -35,13 +55,29 @@ export const userSlice = createSlice({
     builder
       .addCase(profile.pending, (state) => {
         state.loading = true;
-        state.error = false;
+        state.error = null;
       })
       .addCase(profile.fulfilled, (state, action) => {
-        state.user = action.payload;
-        state.success = true;
         state.loading = false;
+        state.success = true;
         state.error = null;
+        state.user = action.payload;
+      })
+      .addCase(updateProfile.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateProfile.fulfilled, (state, action) => {
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+        state.user = action.payload;
+        state.message = 'Usuário atualizado com sucesso!';
+      })
+      .addCase(updateProfile.rejected, (state, action) => {
+        state.error = action.payload;
+        state.loading = false;
+        state.user = null;
       });
   },
 });
