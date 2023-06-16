@@ -44,14 +44,9 @@ export const updateProfile = createAsyncThunk(
 );
 
 export const getUserDetails = createAsyncThunk(
-  'user/details',
+  'user/get',
   async (id, thunkAPI) => {
     const data = await userService.getUserDetails(id);
-
-    // Check for errors
-    if (data.errors) {
-      return thunkAPI.rejectWithValue(data.errors[0]);
-    }
 
     console.log(data);
 
@@ -100,11 +95,10 @@ export const userSlice = createSlice({
         state.error = null;
       })
       .addCase(getUserDetails.fulfilled, (state, action) => {
+        state.user = action.payload;
         state.loading = false;
         state.success = true;
         state.error = null;
-        state.user = action.payload;
-        // state.message = 'Usuário atualizado com sucesso!';
       });
   },
 });

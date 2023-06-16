@@ -28,8 +28,8 @@ const updateProfile = async (data, token) => {
   }
 };
 
-const getUserDetails = async (id, data) => {
-  const config = requestConfig('GET', data, true);
+const getUserDetails = async (id) => {
+  const config = requestConfig('GET');
 
   try {
     const res = await fetch(`${url}/users/${id}`, config)
