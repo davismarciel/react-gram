@@ -1,0 +1,51 @@
+#profile {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1em;
+  border-bottom: 1px solid #363636;
+}
+
+.profile-header img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 2em;
+}
+
+
+.custom-file-upload input[type="file"] {
+  display: none;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.custom-file-upload span  {
+  text-align: center;
+  color: #fff;
+}
+
+.custom-file-upload svg  {
+  width: 35px;
+  position: relative;
+  right: -36%;
+  height: 25px;
+}
+
+.custom-file-upload  {
+  display: flex;
+  font-size: 1.2em;
+  border-radius: 14px;
+  background-color: rgb(0, 149, 246);
+  width: 130px;
+  margin-bottom: .6em;
+  padding: 0.1em;
+  cursor: pointer;
+}

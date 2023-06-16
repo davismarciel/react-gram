@@ -51,10 +51,6 @@ const EditProfile = () => {
       userData.profileImage = profileImage;
     }
 
-    if (profileImage) {
-      userData.profileImage = profileImage;
-    }
-
     if (bio) {
       userData.bio = bio;
     }

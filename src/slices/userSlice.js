@@ -46,7 +46,10 @@ export const updateProfile = createAsyncThunk(
 export const getUserDetails = createAsyncThunk(
   'user/get',
   async (id, thunkAPI) => {
-    const data = await userService.getUserDetails(id);
+    // eslint-disable-next-line prefer-destructuring
+    const token = thunkAPI.getState().auth.user.token;
+
+    const data = await userService.getUserDetails(id, token);
 
     console.log(data);
 
@@ -95,10 +98,10 @@ export const userSlice = createSlice({
         state.error = null;
       })
       .addCase(getUserDetails.fulfilled, (state, action) => {
-        state.user = action.payload;
         state.loading = false;
         state.success = true;
         state.error = null;
+        state.user = action.payload;
       });
   },
 });
