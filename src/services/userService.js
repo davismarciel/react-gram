@@ -28,9 +28,23 @@ const updateProfile = async (data, token) => {
   }
 };
 
+const getUserDetails = async (id, data) => {
+  const config = requestConfig('GET', data, true);
+
+  try {
+    const res = await fetch(`${url}/users/${id}`, config)
+      .then((res) => res.json())
+      .catch((err) => err);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const userService = {
   profile,
   updateProfile,
+  getUserDetails,
 };
 
 export default userService;
