@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import userService from '../services/userService';
 
 const initialState = {
-  user: {},
+  user: {} || '',
   error: false,
   success: false,
   loading: false,
@@ -51,8 +51,6 @@ export const getUserDetails = createAsyncThunk(
 
     const data = await userService.getUserDetails(id, token);
 
-    console.log(data);
-
     return data;
   },
 );
@@ -82,10 +80,10 @@ export const userSlice = createSlice({
         state.error = null;
       })
       .addCase(updateProfile.fulfilled, (state, action) => {
+        state.user = action.payload.user;
         state.loading = false;
         state.success = true;
         state.error = null;
-        state.user = action.payload;
         state.message = 'Usuário atualizado com sucesso!';
       })
       .addCase(updateProfile.rejected, (state, action) => {
@@ -101,7 +99,7 @@ export const userSlice = createSlice({
         state.loading = false;
         state.success = true;
         state.error = null;
-        state.user = action.payload;
+        state.user = action.payload.user;
       });
   },
 });

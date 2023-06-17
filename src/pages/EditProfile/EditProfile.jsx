@@ -20,7 +20,7 @@ const EditProfile = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [profileImage, setProfileImage] = useState('');
+  const [profileImage, setProfileImage] = useState(null);
   const [password, setPassword] = useState('');
   const [bio, setBio] = useState('');
   const [previewImage, setPreviewImage] = useState('');
@@ -54,13 +54,17 @@ const EditProfile = () => {
     if (bio) {
       userData.bio = bio;
     }
+
     if (password) {
       userData.password = password;
     }
 
     const formData = new FormData();
     Object.keys(userData).forEach((key) => formData.append(key, userData[key]));
+
     dispatch(updateProfile(formData));
+
+    console.log(formData);
 
     setTimeout(() => {
       dispatch(resetMessage());
