@@ -20,7 +20,7 @@ const EditProfile = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [profileImage, setProfileImage] = useState(null);
+  const [profileImage, setProfileImage] = useState('');
   const [password, setPassword] = useState('');
   const [bio, setBio] = useState('');
   const [previewImage, setPreviewImage] = useState('');
@@ -100,7 +100,7 @@ const EditProfile = () => {
         <input
           type="text"
           placeholder="Name"
-          value={name}
+          value={name || ''}
           onChange={(e) => setName(e.target.value)}
         />
         <input
@@ -108,7 +108,7 @@ const EditProfile = () => {
           placeholder="Email"
           disabled
           title="Cannot change email"
-          value={email}
+          value={email || ''}
           onChange={(e) => setEmail(e.target.value)}
         />
         <span>Profile image:</span>
@@ -117,14 +117,14 @@ const EditProfile = () => {
         <input
           type="text"
           placeholder="Description"
-          value={bio}
+          value={bio || ''}
           onChange={(e) => setBio(e.target.value)}
         />
         <span>Change password</span>
         <input
           type="password"
           placeholder="Type your new password"
-          value={password}
+          value={password || ''}
           onChange={(e) => setPassword(e.target.value)}
         />
         {!loading && <button type="submit">Edit</button>}
