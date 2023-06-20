@@ -150,7 +150,7 @@ export const photoSlice = createSlice({
           return photo;
         });
 
-        state.message = action.payload;
+        state.message = 'Edit completed';
       })
       .addCase(updatePhoto.rejected, (state, action) => {
         state.error = action.payload;
