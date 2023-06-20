@@ -20,32 +20,44 @@
   margin-right: 2em;
 }
 
-
-.custom-file-upload input[type="file"] {
-  display: none;
-  text-align: center;
-  margin-left: 10px;
+.image-icon {
+  margin-left: .6em;
 }
 
-.custom-file-upload span  {
-  text-align: center;
-  color: #fff;
+.new-photo {
+  padding: 1em;
+  border-bottom: 1px solid #363636;
 }
 
-.custom-file-upload svg  {
-  width: 35px;
-  position: relative;
-  right: -36%;
-  height: 25px;
-}
-
-.custom-file-upload  {
+.photos-container {
   display: flex;
-  font-size: 1.2em;
-  border-radius: 14px;
-  background-color: rgb(0, 149, 246);
-  width: 130px;
-  margin-bottom: .6em;
-  padding: 0.1em;
+  flex-wrap: wrap;
+}
+
+.photo {
+  width: 32%;
+  margin: 0.3%;
+}
+
+.photo img {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.actions svg {
   cursor: pointer;
+}
+
+.edit-photo {
+  margin-bottom: 1em;
+}
+
+.edit-photo img {
+  width: 100%;
+  margin-bottom: 1em;
 }

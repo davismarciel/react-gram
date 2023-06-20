@@ -19,3 +19,10 @@
   object-fit: cover;
 }
 
+.image-icon-edit {
+  position: relative;
+  bottom: 50%;
+  margin-top: 0.5em;
+  left: 49%;
+}
+

@@ -1,11 +1,13 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import './EditProfile.css';
 
 // Hooks
 import { useEffect, useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { BsImage } from 'react-icons/bs';
 // Slice
 import { profile, updateProfile, resetMessage } from '../../slices/userSlice';
+
 // Config
 import { uploads } from '../../utils/config';
 
@@ -111,9 +113,10 @@ const EditProfile = () => {
           value={email || ''}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <span>Profile image:</span>
+        <span>Profile image</span>
+        <BsImage className="image-icon-edit" />
         <input type="file" onChange={handleFile} />
-        <span>Bio:</span>
+        <span>Bio</span>
         <input
           type="text"
           placeholder="Description"
