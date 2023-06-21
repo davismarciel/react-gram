@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Slice
-import { getPhoto } from '../../slices/photoSlice';
+import { getPhoto, like } from '../../slices/photoSlice';
 
 // Config
 import { uploads } from '../../utils/config';
@@ -14,6 +14,7 @@ import { uploads } from '../../utils/config';
 // Components
 import Message from '../../components/Message/Message';
 import Photos from '../../components/Photos/Photos';
+import Like from '../../components/Like/Like';
 
 const Photo = () => {
   const { id } = useParams();
@@ -33,6 +34,9 @@ const Photo = () => {
   }, [dispatch, id]);
 
   // Likes
+  const handleLike = () => {
+    dispatch(like(photo._id));
+  };
 
   if (loading) {
     return <p>Loading</p>;
@@ -41,6 +45,11 @@ const Photo = () => {
   return (
     <div id="photo">
       <Photos photo={photo} />
+      <Like photo={photo} user={user} handleLike={handleLike} />
+      <div className="message-container">
+        {error && <Message msg={message} type="error" />}
+        {message && <Message msg={message} type="success" />}
+      </div>
     </div>
   );
 };
