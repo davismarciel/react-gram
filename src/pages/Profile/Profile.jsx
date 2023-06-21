@@ -10,6 +10,8 @@ import {
   BsFillEyeFill, BsPencilFill, BsXLg, BsImage,
 } from 'react-icons/bs';
 
+import { useResetMessage } from '../../hooks/useResetMessage';
+
 // Slices
 import { getUserDetails } from '../../slices/userSlice';
 import {
@@ -36,13 +38,6 @@ const Profile = () => {
   const { user, loading } = useSelector((state) => state.user);
   const { user: userAuth } = useSelector((state) => state.auth);
 
-  // Reset messages
-  function resetComponentMessage() {
-    setTimeout(() => {
-      dispatch(resetMessage());
-    }, 2000);
-  }
-
   const {
     photos,
     loading: loadingPhoto,
@@ -53,6 +48,8 @@ const Profile = () => {
   // New form and edit form refs
   const newPhotoForm = useRef();
   const editPhotoForm = useRef();
+
+  const resetMessage = useResetMessage(dispatch);
 
   // Load user data
   useEffect(() => {
@@ -80,7 +77,7 @@ const Profile = () => {
     setTitle();
     setImage();
 
-    resetComponentMessage();
+    resetMessage();
   };
 
   const handleFile = (e) => {
@@ -91,7 +88,7 @@ const Profile = () => {
   // Handle delete
   const handleDelete = (id) => {
     dispatch(deletePhoto(id));
-    resetComponentMessage();
+    resetMessage();
   };
 
   // Show or hide a photo
@@ -111,7 +108,7 @@ const Profile = () => {
 
     dispatch(updatePhoto(photoData));
 
-    resetComponentMessage();
+    resetMessage();
   };
 
   const handleEdit = (photo) => {
