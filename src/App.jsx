@@ -31,6 +31,7 @@ function App() {
       <NavBar />
       <div className="container">
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/profile" element={auth ? <EditProfile /> : <Navigate to="/login" />} />
           <Route path="/users/:id" element={auth ? <Profile /> : <Navigate to="/login" />} />
           <Route path="/photos/:id" element={auth ? <Photo /> : <Navigate to="/login" />} />

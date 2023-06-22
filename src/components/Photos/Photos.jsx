@@ -7,10 +7,9 @@ import { Link } from 'react-router-dom';
 
 import { uploads } from '../../utils/config';
 
-const Photos = ({ photo, id }) => {
+const Photos = ({ photo }) => {
   return (
-    <div className="photo-title">
-
+    <div className="img">
       {photo.image && (
         <img src={`${uploads}/photos/${photo.image}`} alt={photo.title} />
       )}
