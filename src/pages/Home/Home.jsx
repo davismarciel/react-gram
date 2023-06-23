@@ -33,6 +33,10 @@ const Home = () => {
     resetMessage();
   };
 
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
+
   return (
     <div id="home">
       {photos && photos.map((photo) => (

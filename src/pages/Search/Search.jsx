@@ -24,7 +24,7 @@ const Search = () => {
   const resetMessage = useResetMessage(dispatch);
 
   const { user } = useSelector((state) => state.auth);
-  const { photos } = useSelector((state) => state.photo);
+  const { photos, loading } = useSelector((state) => state.photo);
 
   useEffect(() => {
     dispatch(searchPhotos(search));
@@ -35,6 +35,10 @@ const Search = () => {
 
     resetMessage();
   };
+
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
 
   return (
     <div id="search">

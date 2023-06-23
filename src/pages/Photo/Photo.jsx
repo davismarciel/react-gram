@@ -61,6 +61,10 @@ const Photo = () => {
     resetMessage();
   };
 
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
+
   return (
     <div id="photo">
       <Photos photo={photo} />

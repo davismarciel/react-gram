@@ -127,6 +127,10 @@ const Profile = () => {
     hideOrShowForms();
   };
 
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
+
   return (
     <div id="profile">
       <div className="profile-header">
