@@ -50,7 +50,6 @@ const Home = () => {
       {photos && photos.length === 0 && (
         <h2 className="no-photos">
           There's no photos yet...
-          <Link to={`/users/${user.userId}`}>Click here to post</Link>
         </h2>
       )}
     </div>
