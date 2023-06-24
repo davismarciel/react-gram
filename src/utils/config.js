@@ -1,5 +1,5 @@
-export const url = 'https://immense-temple-46522-2b9ae8c44a90.herokuapp.com/api';
-export const uploads = 'https://immense-temple-46522-2b9ae8c44a90.herokuapp.com/uploads';
+export const url = 'https://apigram3-a7b2e8e57e31.herokuapp.com/api';
+export const uploads = 'https://apigram3-a7b2e8e57e31.herokuapp.com/uploads';
 
 export const requestConfig = (method, data, token = null, image = null) => {
   let config;
