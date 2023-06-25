@@ -11,6 +11,22 @@
   color: #ccc;
 }
 
+@media (max-width: 710px) {
+  #edit-profile {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 410px) {
+  #edit-profile h2, #edit-profile p {
+    font-size: 1.3em;
+  }
+}
+
+
 .profile-image {
   width: 150px;
   height: 150px;
