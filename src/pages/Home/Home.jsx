@@ -43,7 +43,7 @@ const Home = () => {
         <div key={photo._id}>
           <Photos photo={photo} />
           <Like photo={photo} user={user} handleLike={handleLike} />
-          <Link className="btn" to={`/photos/${photo._id}`}>See more...</Link>
+
           <div className="border" />
         </div>
       ))}

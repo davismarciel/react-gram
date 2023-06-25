@@ -80,8 +80,8 @@
 
 @media (max-width: 410px) {
   #nav-links li {
-    display: flex;
-    justify-content: flex-end;
+    padding: .5em;
+    margin: 0 auto;
   }
 }
 

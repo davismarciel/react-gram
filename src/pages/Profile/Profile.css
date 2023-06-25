@@ -32,8 +32,7 @@
   .profile-description h2, p {
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    font-size: 12px;
   }
 }
 .profile-header img {
