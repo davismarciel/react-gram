@@ -11,7 +11,7 @@ const publishPhoto = async (data, token) => {
 
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 
@@ -26,7 +26,7 @@ const getUserPhotos = async (id, token) => {
 
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 
@@ -41,7 +41,7 @@ const deletePhoto = async (id, token) => {
 
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 
@@ -56,7 +56,7 @@ const updatePhoto = async (data, id, token) => {
 
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 
@@ -71,7 +71,7 @@ const getPhoto = async (id, token) => {
 
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 
@@ -85,7 +85,7 @@ const like = async (id, token) => {
 
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 
@@ -99,7 +99,7 @@ const comment = async (data, id, token) => {
 
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 
@@ -112,7 +112,7 @@ const getPhotos = async () => {
 
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 
@@ -126,7 +126,7 @@ const searchPhotos = async (query, token) => {
 
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 

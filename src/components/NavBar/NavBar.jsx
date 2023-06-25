@@ -1,11 +1,12 @@
 import './NavBar.css';
-
 import {
   NavLink, Link, useNavigate, Navigate,
 } from 'react-router-dom';
 import {
   BsSearch, BsHouseDoorFill, BsFillPersonFill, BsFillCameraFill, BsPower,
 } from 'react-icons/bs';
+
+import { MdOutlineAddAPhoto } from 'react-icons/md';
 
 // Hooks
 import { useState } from 'react';
@@ -41,7 +42,12 @@ const NavBar = () => {
   return (
     <div>
       <nav id="nav">
-        <Link to="/">ReactGram</Link>
+        <Link className="actived" to="/">
+          ReactGram
+        </Link>
+        <Link className="hider" to="/">
+          <MdOutlineAddAPhoto className="icon" />
+        </Link>
         <form id="search-form" onSubmit={handleSearch}>
           <BsSearch />
           <input type="text" placeholder="Search" onChange={(e) => setQuery(e.target.value)} />
@@ -51,7 +57,7 @@ const NavBar = () => {
             <>
               <li>
                 <NavLink to="/">
-                  <BsHouseDoorFill />
+                  <BsHouseDoorFill className="home-icon" />
                 </NavLink>
               </li>
 

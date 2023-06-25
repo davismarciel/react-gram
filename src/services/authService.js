@@ -14,7 +14,7 @@ const register = async (data) => {
     }
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 
@@ -38,7 +38,7 @@ const login = async (data) => {
 
     return res;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error');
   }
 };
 

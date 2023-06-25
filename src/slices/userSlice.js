@@ -18,8 +18,6 @@ export const profile = createAsyncThunk(
 
     const data = await userService.profile(user, token);
 
-    console.log(data);
-
     return data;
   },
 );
@@ -36,8 +34,6 @@ export const updateProfile = createAsyncThunk(
     if (data.errors) {
       return thunkAPI.rejectWithValue(data.errors[0]);
     }
-
-    console.log(data);
 
     return data;
   },

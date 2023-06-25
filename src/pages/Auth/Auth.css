@@ -6,7 +6,7 @@
   margin: 2em auto;
 }
 
-#login h2, #register h2 {
+#login h1, #register h1 {
   text-align: center;
   font-size: 2.1em;
   margin-top: 0;

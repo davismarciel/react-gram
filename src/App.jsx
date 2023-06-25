@@ -20,6 +20,7 @@ import EditProfile from './pages/EditProfile/EditProfile';
 import Profile from './pages/Profile/Profile';
 import Photo from './pages/Photo/Photo';
 import Search from './pages/Search/Search';
+import Error from './pages/Error/Error';
 
 function App() {
   const { auth, loading } = useAuth();
@@ -32,6 +33,7 @@ function App() {
       <NavBar />
       <div className="container">
         <Routes>
+          <Route path="*" element={<Error />} />
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={auth ? <EditProfile /> : <Navigate to="/login" />} />
           <Route path="/users/:id" element={auth ? <Profile /> : <Navigate to="/login" />} />

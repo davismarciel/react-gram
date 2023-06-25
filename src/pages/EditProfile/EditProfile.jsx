@@ -66,8 +66,6 @@ const EditProfile = () => {
 
     dispatch(updateProfile(formData));
 
-    console.log(formData);
-
     setTimeout(() => {
       dispatch(resetMessage());
     }, 2000);
