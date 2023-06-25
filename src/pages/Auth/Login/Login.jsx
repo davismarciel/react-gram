@@ -59,7 +59,10 @@ const Login = () => {
         {error && <Message msg={error} type="error" />}
 
       </form>
-      <Link to="/register">Don't have an account? Sign up</Link>
+      <Link to="/register">
+        Don't have an account?
+        Sign up
+      </Link>
     </div>
   );
 };

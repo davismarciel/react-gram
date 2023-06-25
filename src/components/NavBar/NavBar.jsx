@@ -48,10 +48,12 @@ const NavBar = () => {
         <Link className="hider" to="/">
           <MdOutlineAddAPhoto className="icon" />
         </Link>
+        {auth && (
         <form id="search-form" onSubmit={handleSearch}>
           <BsSearch />
           <input type="text" placeholder="Search" onChange={(e) => setQuery(e.target.value)} />
         </form>
+        )}
         <ul id="nav-links">
           {auth ? (
             <>
