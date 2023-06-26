@@ -43,7 +43,6 @@ const Home = () => {
         <div key={photo._id}>
           <Photos photo={photo} />
           <Like photo={photo} user={user} handleLike={handleLike} />
-
           <div className="border" />
         </div>
       ))}

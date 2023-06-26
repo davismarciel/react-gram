@@ -1,5 +1,7 @@
 .photo-item img {
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 #home .photo-item h2 {

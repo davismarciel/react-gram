@@ -10,7 +10,7 @@
 #home img {
   max-width: 469px;
   height: 469px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-bottom: 1px solid #363636;
 }
@@ -26,7 +26,6 @@
   #home img {
     width: 100%;
     height: 50%;
-    object-fit: cover;
   }
 }
 
