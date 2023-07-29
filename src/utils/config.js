@@ -1,5 +1,5 @@
-export const url = 'https://apigram3-a7b2e8e57e31.herokuapp.com/api';
-export const uploads = 'https://apigram3-a7b2e8e57e31.herokuapp.com/uploads';
+export const url = 'https://tame-rose-pigeon-kit.cyclic.app/api';
+export const uploads = 'https://tame-rose-pigeon-kit.cyclic.app/uploads';
 
 export const requestConfig = (method, data, token = null, image = null) => {
   let config;
